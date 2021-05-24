@@ -1,3 +1,11 @@
-h1 {
+.weather-all {
+  max-width: 700px;
   color: aqua;
+  border-style: solid;
+  border size: 2px;
+  border-radius: 10px;
+  
+}
+#weather-conditions{
+  list-style: none;
 }

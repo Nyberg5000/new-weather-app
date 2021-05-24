@@ -20,24 +20,35 @@
   </head>
   <body>
     <div class="container">
-      <h1>Copenhagen</h1>
-      <p>Friday 15:14</p>
-      <h2>
-        🌞<i class="fas fa-cloud-sun"></i>
-        <span id="city-temp"
-          >20° <a href="url" id="celsius"> °C |</a>
-          <a href="url" id="fahrenheit">°F </a></span
-        >
-      </h2>
-      <a href="" class="btn btn-primary"> click</a>
-
-      <ul>
-        <li id="weather-description">Partly sunny</li>
-        <li>Wind speed</li>
-        <li>Precipitation</li>
-      </ul>
+      <div class="weather-all">
+        <div class="row">
+          <div class="col-6">
+            <h1>Copenhagen</h1>
+            <p>Friday 15:14</p>
+          </div>
+          <div class="col-6">
+            <h2>
+              🌞<i class="fas fa-cloud-sun"></i>
+              <span id="city-temp"
+                >20° <a href="url" id="celsius"> °C |</a>
+                <a href="url" id="fahrenheit">°F </a></span
+              >
+            </h2>
+            <ul id="weather-conditions">
+              <li id="weather-description">Partly sunny</li>
+              <li>Wind speed</li>
+              <li>Precipitation</li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </div>
-
+    <p>
+      <a href="https://github.com/Nyberg5000/new-weather-app" target="_blank"
+        >Open-source project</a
+      >
+      by Tammi Nyberg
+    </p>
     <script src="src/app.js"></script>
   </body>
 </html>
