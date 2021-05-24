@@ -10,11 +10,9 @@
       integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
       crossorigin="anonymous"
     />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:ital,wght@0,300;0,700;1,300&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="src/style.css" />
     <title>Weather app</title>
   </head>
@@ -22,32 +20,33 @@
     <div class="container">
       <div class="weather-all">
         <div class="row">
-          <div class="col-6">
+          <div class="col-6 city-column">
             <h1>Copenhagen</h1>
             <p>Friday 15:14</p>
           </div>
-          <div class="col-6">
+          <div class="col-6 temperature-column" >
             <h2>
               🌞<i class="fas fa-cloud-sun"></i>
               <span id="city-temp"
-                >20° <a href="url" id="celsius"> °C |</a>
-                <a href="url" id="fahrenheit">°F </a></span
+                >20<span id = "units"><a href="url" id="celsius">°C </a>|
+                <a href="url" id="fahrenheit">°F </a></span></span
               >
             </h2>
             <ul id="weather-conditions">
               <li id="weather-description">Partly sunny</li>
-              <li>Wind speed</li>
-              <li>Precipitation</li>
+              <li>Wind speed:</li>
+              <li>Precipitation:</li>
             </ul>
           </div>
         </div>
       </div>
-    </div>
-    <p>
+      <p id="credit">
       <a href="https://github.com/Nyberg5000/new-weather-app" target="_blank"
         >Open-source project</a
       >
       by Tammi Nyberg
+    </div>
+    
     </p>
     <script src="src/app.js"></script>
   </body>

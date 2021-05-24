@@ -1,11 +1,45 @@
-.weather-all {
-  max-width: 700px;
-  color: aqua;
-  border-style: solid;
-  border size: 2px;
-  border-radius: 10px;
-  
+body {
+  font-family: "Baloo 2", cursive;
+  margin: 0 auto;
+  max-width: 500px;
 }
-#weather-conditions{
+.weather-all {
+  font-size: 20px;
+  margin-top: 20px;
+  padding: 15px;
+  color: aqua;
+  border: 1px solid;
+  border-radius: 10px;
+}
+h1 {
+  margin-bottom: -9px;
+}
+h2 {
+  padding-top: 7px;
+  font-size: 50px;
+}
+.city-column {
+  color: black;
+}
+.temperature-column {
+  padding-left: 30px;
+  color: orangered;
+}
+#celsius {
+  text-decoration: none;
+}
+#fahrenheit {
+  text-decoration: none;
+}
+#units {
+  position: relative;
+  bottom: 19px;
+  color: black;
+  font-size: 18px;
+}
+#weather-conditions {
   list-style: none;
+}
+#credit {
+  font-size: 15px;
 }
