@@ -1,45 +1,60 @@
 body {
   font-family: "Baloo 2", cursive;
+
   margin: 0 auto;
   max-width: 600px;
 }
 .weather-all {
-  font-size: 20px;
+  background: radial-gradient(
+    circle at 7.5% 24%,
+    rgb(237, 161, 193) 0%,
+    rgb(250, 178, 172) 25.5%,
+    rgb(190, 228, 210) 62.3%,
+    rgb(215, 248, 247) 93.8%
+  );
+
+  font-size: 23px;
   margin-top: 30px;
   padding: 25px 25px 0px 25px;
-  color: aqua;
-  border: 1px solid;
+  border: 1px solid #d4f5f2;
   border-radius: 10px;
+  box-shadow: 5px 5px 5px rgba(204, 216, 200, 0.5);
 }
-#city-search {
-  color: blue;
+.city {
+  color: #cc8fa4;
 }
 h1 {
   margin-bottom: -9px;
+  color: #a4ada1;
 }
-#img-temp {
-  padding-top: 7px;
+#date {
+  color: #a4ada1;
+}
+#weather-icon {
+  position: relative;
+
+  bottom: 10px;
+}
+.img-temp {
   font-size: 50px;
 }
-#city-temp {
-  font-size: 50px;
-}
-.city-column {
-  color: black;
-}
+
 .temperature-column {
   padding-left: 30px;
 }
 #celsius {
   text-decoration: none;
+  color: #cc8fa4;
 }
 #fahrenheit {
   text-decoration: none;
+  color: #cc8fa4;
 }
 #units {
   position: relative;
-  bottom: 19px;
-  color: black;
+  bottom: 20px;
+  left: 0px;
+  color: #cc8fa4;
   font-size: 18px;
 }
 
@@ -48,7 +63,9 @@ h1 {
 }
 #basic-addon2 {
   position: relative;
+  background: #dd9bb2;
   left: 223px;
   top: -38px;
   max-width: 32%;
+  box-shadow: 1px 1px 1px rgba(59, 61, 58, 0.5);
 }
