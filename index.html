@@ -32,28 +32,27 @@
             <p id="date">Friday 15:14</p>
           </div>
           <div class="col-6 temperature-column" >
-            <h2>
-              🌞<i class="fas fa-cloud-sun"></i>
-              <span id="city-temp"
-                >20°<span id = "units"><a href="url" id="celsius">C </a>|
-                <a href="url" id="fahrenheit">F </a></span></span
+            <div class="img-temp">
+              <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon" id="weather-icon">
+              <span id="city-temp"></span><span id = "units"><a href="url" id="celsius">°C </a>|
+                <a href="url" id="fahrenheit">°F </a></span></span
               >
-            </h2>
+              </div>
             <div class="weather-conditions">
               <div class="weather-description" id="description">Partly sunny</div>
                Windspeed: <span id="wind"> 10 </span> m/s  
-              Precipitation: <span id="rain"> 2 </span>
+              Humidity: <span id="humidity"> 60</span>%
             </div>
           </div>
         </div>
       </div>
-      <p id="credit">
+     
+    </div>
+     <p id="credit">
       <a href="https://github.com/Nyberg5000/new-weather-app" target="_blank"
         >Open-source project</a
       >
       by Tammi Nyberg
-    </div>
-    
     </p>
     <script src="src/app.js"></script>
   </body>

@@ -17,8 +17,11 @@ body {
 h1 {
   margin-bottom: -9px;
 }
-h2 {
+#img-temp {
   padding-top: 7px;
+  font-size: 50px;
+}
+#city-temp {
   font-size: 50px;
 }
 .city-column {
@@ -26,7 +29,6 @@ h2 {
 }
 .temperature-column {
   padding-left: 30px;
-  color: orangered;
 }
 #celsius {
   text-decoration: none;

@@ -1,4 +1,8 @@
 function showTemperature(response) {
+  let icon = response.data.weather[0].icon;
+  document
+    .querySelector("#weather-icon")
+    .setAttribute("src", `http://openweathermap.org/img/wn/${icon}@2x.png`);
   document.querySelector("h1").innerHTML = response.data.name;
   document.querySelector("#city-temp").innerHTML = Math.round(
     response.data.main.temp
@@ -6,7 +10,7 @@ function showTemperature(response) {
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
-  document.querySelector("rain").innerHTML=response.data.wind.
+  document.querySelector("#humidity").innerHTML = response.data.main.humidity;
 }
 
 function getCity(city) {
