@@ -11,6 +11,9 @@ body {
   border: 1px solid;
   border-radius: 10px;
 }
+#city-search {
+  color: blue;
+}
 h1 {
   margin-bottom: -9px;
 }
@@ -37,9 +40,7 @@ h2 {
   color: black;
   font-size: 18px;
 }
-#weather-conditions {
-  list-style: none;
-}
+
 #credit {
   font-size: 15px;
 }
