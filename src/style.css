@@ -1,12 +1,12 @@
 body {
   font-family: "Baloo 2", cursive;
   margin: 0 auto;
-  max-width: 500px;
+  max-width: 600px;
 }
 .weather-all {
   font-size: 20px;
-  margin-top: 20px;
-  padding: 15px;
+  margin-top: 30px;
+  padding: 25px 25px 0px 25px;
   color: aqua;
   border: 1px solid;
   border-radius: 10px;
@@ -42,4 +42,10 @@ h2 {
 }
 #credit {
   font-size: 15px;
+}
+#basic-addon2 {
+  position: relative;
+  left: 223px;
+  top: -38px;
+  max-width: 32%;
 }
