@@ -7,6 +7,7 @@ function showTemperature(response) {
   document.querySelector("#city-temp").innerHTML = Math.round(
     response.data.main.temp
   );
+  celsiusTemperature = Math.round(response.data.main.temp);
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
   document.querySelector("#wind").innerHTML = response.data.wind.speed;
@@ -24,6 +25,19 @@ function findCity(event) {
   event.preventDefault();
   let city = document.querySelector("#city-name").value;
   getCity(city);
+}
+
+function convertFahrenheit(event) {
+  event.preventDefault();
+  let temperatureDisplay = document.querySelector("#city-temp");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureDisplay.innerHTML = Math.round(fahrenheitTemperature);
+}
+
+function convertCelsius(event) {
+  event.preventDefault();
+  let temperatureDisplay = document.querySelector("#city-temp");
+  temperatureDisplay.innerHTML = celsiusTemperature;
 }
 
 let searchCity = document.querySelector("#city-search");
@@ -44,3 +58,13 @@ let currentDay = days[currentDate.getDay()];
 let hours = currentDate.getHours();
 let minutes = currentDate.getMinutes();
 todayDate.innerHTML = `${currentDay} ${hours}:${minutes}`;
+
+let celsiusTemperature = null;
+
+let fahrenheitConvert = document.querySelector("#fahrenheit");
+fahrenheitConvert.addEventListener("click", convertFahrenheit);
+
+let celsiusConvert = document.querySelector("#celsius");
+celsiusConvert.addEventListener("click", convertCelsius);
+
+getCity("Copenhagen");

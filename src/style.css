@@ -1,6 +1,5 @@
 body {
   font-family: "Baloo 2", cursive;
-
   margin: 0 auto;
   max-width: 600px;
 }
@@ -12,7 +11,6 @@ body {
     rgb(190, 228, 210) 62.3%,
     rgb(215, 248, 247) 93.8%
   );
-
   font-size: 23px;
   margin-top: 30px;
   padding: 25px 25px 0px 25px;
@@ -57,15 +55,17 @@ h1 {
   color: #cc8fa4;
   font-size: 18px;
 }
-
+#search-button {
+  position: relative;
+  left: -16px;
+  top: -1px;
+  background: #dd9bb2;
+  border: 1px solid #dd9bb2;
+  box-shadow: 2px 2px 2px rgba(70, 75, 68, 0.5);
+}
 #credit {
   font-size: 15px;
 }
-#basic-addon2 {
-  position: relative;
-  background: #dd9bb2;
-  left: 223px;
-  top: -38px;
-  max-width: 32%;
-  box-shadow: 1px 1px 1px rgba(59, 61, 58, 0.5);
+#code-link {
+  color: #a4ada1;
 }

@@ -22,9 +22,16 @@
     <div class="container">
       <div class="weather-all">
         <div class="input-group mb-3 city">
-           <form id="city-search"><input type="text" id="city-name" class="form-control" placeholder="Enter name of city"  aria-describedby="basic-addon2">
-            <span class="input-group-text button" id="basic-addon2">Search
-            </span> </form>
+           <form id="city-search">
+             <div class="row">
+               <div class="col-9">
+             <input type="search" id="city-name" class="form-control" placeholder="Enter name of city">
+             </div>
+             <div class="col-3">
+            <input type="submit" id="search-button" value="Search" class="btn btn-primary">
+            </div>
+          </div>
+          </form>
         <div class="row">
           
           <div class="col-6 city-column">
@@ -34,8 +41,8 @@
           <div class="col-6 temperature-column" >
             <div class="img-temp">
               <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon" id="weather-icon">
-              <span id="city-temp"></span><span id = "units"><a href="url" id="celsius">°C </a>|
-                <a href="url" id="fahrenheit">°F </a></span></span
+              <span id="city-temp"></span><span id = "units"><a href="#" id="celsius">°C </a>|
+                <a href="#" id="fahrenheit">°F </a></span></span
               >
               </div>
             <div class="weather-conditions">
@@ -49,7 +56,7 @@
      
     </div>
      <p id="credit">
-      <a href="https://github.com/Nyberg5000/new-weather-app" target="_blank"
+      <a href="https://github.com/Nyberg5000/new-weather-app" target="_blank" id="code-link"
         >Open-source project</a
       >
       by Tammi Nyberg
