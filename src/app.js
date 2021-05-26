@@ -10,7 +10,9 @@ function showTemperature(response) {
   celsiusTemperature = Math.round(response.data.main.temp);
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
-  document.querySelector("#wind").innerHTML = response.data.wind.speed;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
 }
 
