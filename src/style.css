@@ -63,6 +63,26 @@ h1 {
   border: 1px solid #dd9bb2;
   box-shadow: 2px 2px 2px rgba(70, 75, 68, 0.5);
 }
+#search-button:hover {
+  opacity: 0.4;
+}
+#forecast-day {
+  text-align: center;
+  padding-bottom: 5px;
+}
+.forecast-day-only {
+  margin-bottom: -17px;
+}
+#forecast-icon {
+  max-width: 90%;
+  margin-bottom: -12px;
+}
+.forecast-temp-min-max {
+  font-size: 18px;
+}
+.forecast-temp-min {
+  opacity: 0.6;
+}
 #credit {
   font-size: 15px;
 }
