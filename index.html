@@ -20,11 +20,13 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather-all">
-        <div class="input-group mb-3 city">
+
+  <div class="weather-all">
+       
+    <div class="input-group mb-3 city">
            <form id="city-search">
              <div class="row">
-               <div class="col-9">
+              <div class="col-9">
              <input type="search" id="city-name" class="form-control" placeholder="Enter name of city">
              </div>
              <div class="col-3">
@@ -32,9 +34,8 @@
             </div>
           </div>
           </form>
-        <div class="row">
-          
-          <div class="col-6 city-column">
+          <div class="row">
+            <div class="col-6 city-column">
             <h1>Copenhagen</h1>
             <p id="date">Friday 15:14</p>
           </div>
@@ -45,25 +46,18 @@
                 <a href="#" id="fahrenheit">°F </a></span></span
               >
               </div>
-            <div class="weather-conditions">
+
+              <div class="weather-conditions">
               <div class="weather-description" id="description">Partly sunny</div>
                Windspeed: <span id="wind"> 10 </span> m/s  
               Humidity: <span id="humidity"> 60</span>%
             </div>
+          
           </div>
         </div>
       </div>
-      <div class="row" id="weather-forecast">
-        <div class="col-2" id="forecast-day">
-          <div class="forecast-day-only">
-     Sunday <br>
-     </div>
-     <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon" id="forecast-icon"> <br>
-     <div class="forecast-temp-min-max">
-     <span class="forecast-temp-min">  15°/</span>20° </div>
-     </div>
-     </div>
-    </div>
+      <div class="forecast" id="weather-forecast"></div>
+      
      <p id="credit">
       <a href="https://github.com/Nyberg5000/new-weather-app" target="_blank" id="code-link"
         >Open-source project</a

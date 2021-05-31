@@ -1,3 +1,12 @@
+function updateForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "6564272724482451c8ea4a6b9bde60dd";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayForecast);
+  console.log;
+}
+
 function showTemperature(response) {
   let icon = response.data.weather[0].icon;
   document
@@ -14,6 +23,7 @@ function showTemperature(response) {
     response.data.wind.speed
   );
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
+  updateForecast(response.data.coord);
 }
 
 function getCity(city) {
@@ -40,6 +50,27 @@ function convertCelsius(event) {
   event.preventDefault();
   let temperatureDisplay = document.querySelector("#city-temp");
   temperatureDisplay.innerHTML = celsiusTemperature;
+}
+
+function displayForecast(response) {
+  console.log(response.data.daily);
+  let weatherForecast = document.querySelector("#weather-forecast");
+  let forecastHTML = `<div class= "row">`;
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thur"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2" id="forecast-day">
+          <div class="forecast-day-only">
+     ${day} <br>
+     </div>
+     <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon" id="forecast-icon"> <br>
+     <div class="forecast-temp-min-max">
+     <span class="forecast-temp-min">  15°/</span>20° </div>
+     </div>`;
+    forecastHTML = forecastHTML + `</div>`;
+    weatherForecast.innerHTML = forecastHTML;
+  });
 }
 
 let searchCity = document.querySelector("#city-search");
