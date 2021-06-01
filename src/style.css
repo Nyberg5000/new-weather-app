@@ -24,10 +24,10 @@ body {
 h1 {
   margin-top: 18px;
   margin-bottom: -11px;
-  color: #a4ada1;
+  color: #8f968d;
 }
 #date {
-  color: #a4ada1;
+  color: #8f968d;
 }
 
 #weather-icon {
@@ -59,7 +59,14 @@ h1 {
 #search-button:hover {
   opacity: 0.4;
 }
-
+.row {
+  position: relative;
+  left: 15px;
+  top: 15px;
+}
+#weather-forecast {
+  margin-bottom: 30px;
+}
 #forecast-day {
   text-align: center;
   padding-bottom: 5px;
@@ -73,13 +80,16 @@ h1 {
 }
 .forecast-temp-min-max {
   font-size: 18px;
+  color: #8f968d;
 }
 .forecast-temp-min {
   opacity: 0.6;
 }
 #credit {
   font-size: 15px;
+  position: fixed;
+  opacity: 0.6;
 }
 #code-link {
-  color: #a4ada1;
+  color: #959c92;
 }
