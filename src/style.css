@@ -22,39 +22,32 @@ body {
   color: #cc8fa4;
 }
 h1 {
-  margin-bottom: -9px;
+  margin-top: 18px;
+  margin-bottom: -11px;
   color: #a4ada1;
 }
 #date {
   color: #a4ada1;
 }
+
 #weather-icon {
   position: relative;
-
+  left: 16px;
   bottom: 10px;
 }
 .img-temp {
   font-size: 50px;
+  margin-left: -30px;
+  margin-bottom: -35px;
 }
 
 .temperature-column {
   padding-left: 30px;
 }
-#celsius {
-  text-decoration: none;
-  color: #cc8fa4;
+#description {
+  text-transform: capitalize;
 }
-#fahrenheit {
-  text-decoration: none;
-  color: #cc8fa4;
-}
-#units {
-  position: relative;
-  bottom: 20px;
-  left: 0px;
-  color: #cc8fa4;
-  font-size: 18px;
-}
+
 #search-button {
   position: relative;
   left: -16px;
@@ -66,6 +59,7 @@ h1 {
 #search-button:hover {
   opacity: 0.4;
 }
+
 #forecast-day {
   text-align: center;
   padding-bottom: 5px;

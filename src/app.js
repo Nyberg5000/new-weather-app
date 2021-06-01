@@ -1,12 +1,31 @@
 function updateForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "6564272724482451c8ea4a6b9bde60dd";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
-  console.log(apiUrl);
   axios.get(apiUrl).then(displayForecast);
-  console.log;
 }
-
+function updateDate() {
+  let todayDate = document.querySelector("#date");
+  let currentDate = new Date();
+  let hours = currentDate.getHours();
+  let minutes = currentDate.getMinutes();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  let currentDay = days[currentDate.getDay()];
+  todayDate.innerHTML = `${currentDay} ${hours}:${minutes}`;
+}
 function showTemperature(response) {
   let icon = response.data.weather[0].icon;
   document
@@ -16,6 +35,7 @@ function showTemperature(response) {
   document.querySelector("#city-temp").innerHTML = Math.round(
     response.data.main.temp
   );
+
   celsiusTemperature = Math.round(response.data.main.temp);
   document.querySelector("#description").innerHTML =
     response.data.weather[0].description;
@@ -38,66 +58,42 @@ function findCity(event) {
   let city = document.querySelector("#city-name").value;
   getCity(city);
 }
-
-function convertFahrenheit(event) {
-  event.preventDefault();
-  let temperatureDisplay = document.querySelector("#city-temp");
-  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
-  temperatureDisplay.innerHTML = Math.round(fahrenheitTemperature);
-}
-
-function convertCelsius(event) {
-  event.preventDefault();
-  let temperatureDisplay = document.querySelector("#city-temp");
-  temperatureDisplay.innerHTML = celsiusTemperature;
+function forecastWeekday(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
 }
 
 function displayForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let weatherForecast = document.querySelector("#weather-forecast");
+
   let forecastHTML = `<div class= "row">`;
-  let days = ["Sun", "Mon", "Tue", "Wed", "Thur"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2" id="forecast-day">
+  forecast.forEach(function (dayForecast, index) {
+    if (index < 6 && index > 0) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2" id="forecast-day">
           <div class="forecast-day-only">
-     ${day} <br>
+     ${forecastWeekday(dayForecast.dt)} <br>
      </div>
-     <img src="http://openweathermap.org/img/wn/10d@2x.png" alt="icon" id="forecast-icon"> <br>
+     <img src="http://openweathermap.org/img/wn/${
+       dayForecast.weather[0].icon
+     }@2x.png" alt="icon" id="forecast-icon"> <br>
      <div class="forecast-temp-min-max">
-     <span class="forecast-temp-min">  15°/</span>20° </div>
+     <span class="forecast-temp-min"> ${Math.round(
+       dayForecast.temp.min
+     )}°</span> ${Math.round(dayForecast.temp.max)}° </div>
      </div>`;
-    forecastHTML = forecastHTML + `</div>`;
-    weatherForecast.innerHTML = forecastHTML;
+    }
   });
+  forecastHTML = forecastHTML + `</div>`;
+  weatherForecast.innerHTML = forecastHTML;
 }
 
 let searchCity = document.querySelector("#city-search");
 searchCity.addEventListener("submit", findCity);
 
-let todayDate = document.querySelector("#date");
-let currentDate = new Date();
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let currentDay = days[currentDate.getDay()];
-let hours = currentDate.getHours();
-let minutes = currentDate.getMinutes();
-todayDate.innerHTML = `${currentDay} ${hours}:${minutes}`;
-
-let celsiusTemperature = null;
-
-let fahrenheitConvert = document.querySelector("#fahrenheit");
-fahrenheitConvert.addEventListener("click", convertFahrenheit);
-
-let celsiusConvert = document.querySelector("#celsius");
-celsiusConvert.addEventListener("click", convertCelsius);
-
 getCity("Copenhagen");
+updateDate();
